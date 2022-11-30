@@ -7,3 +7,5 @@ Text/Raw Datasets/test.csv
 Text/profanity_model.h5
 Text/Cleaned Datasets/CleanedTrainingDataset.csv
 Text/tokenizer.json
+Image/data/sfw
+Image/data/porn
