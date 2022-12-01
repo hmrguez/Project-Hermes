@@ -9,3 +9,4 @@ Text/Cleaned Datasets/CleanedTrainingDataset.csv
 Text/tokenizer.json
 Image/data/sfw
 Image/data/porn
+Image/sfw_nswf_identifier.h5
