@@ -43,7 +43,7 @@ def predict_image(image_path):
     image = tensorflow.image.resize(image, (256,256))
     image = np.expand_dims(image/255, 0)
 
-    result = image_model.predict(image)
+    result = image_model.predict(image)[0]
     return result
 
 
