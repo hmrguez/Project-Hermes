@@ -10,3 +10,4 @@ Text/tokenizer.json
 Image/data/sfw
 Image/data/porn
 Image/sfw_nswf_identifier.h5
+Text/__pycache__/__init__.cpython-310.pyc
