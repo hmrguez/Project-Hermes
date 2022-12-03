@@ -51,6 +51,11 @@ model.compile(loss='binary_crossentropy',
 
 Given a sataset of around 160k written Wikipedia forum comments the networks behaved with an overall validation accuracy of 98%
 
+Here we can see how the loss and accuracy behaved on the course of 2 training epochs, both on training and validation data
+
+<img src="text_acc.png"></img>
+<img src="text_loss.png"></img>
+
 Full dataset can be found [here](https://www.kaggle.com/c/8076/download/train.csv.zip). Once downloaded in order to test it it must be placed within the Text/Raw Dataset folder or changed int the code.
 
 The testing script can be located [here](Text\TestingModel.ipynb)
@@ -86,6 +91,11 @@ model.compile('adam', loss='binary_crossentropy')
 
 Dataset is made entirely by random google images that serve the purpose of the labels. Actually the model is so flexible that the same repository can be used to any binary classification, not only the one it is currently being used for
 
+Here we can see how the loss and accuracy behaved on the course of 20 training epochs, both on training and validation data
+
+<img src="image_acc.png"></img>
+<img src="image_loss.png"></img>
+
 ## `Using`
 
 ### `Requirements`
@@ -93,7 +103,6 @@ Dataset is made entirely by random google images that serve the purpose of the l
 - Numpy
 - OpenCV
 - NLTK
-- Matplotlib
 
 ### `Instructions`
 
@@ -103,4 +112,4 @@ Dataset is made entirely by random google images that serve the purpose of the l
 
 ## `Thank you notes`
 
-This project is based on the one made by [@iamhosseindhv](https://github.com/iamhosseindhv) on LSTM text classification. He is the main inspiration behind the text classification and the image classification is simply the image side of the same focus.  
+This project is based on the one made by [@iamhosseindhv](https://github.com/iamhosseindhv) on LSTM text classification. He is the main inspiration behind the text classification and the image classification is simply the image side of the same focus.
