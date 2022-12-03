@@ -14,7 +14,7 @@ Also this is a part of a series of projects being delivered by the team in the A
 
 The text classifier is a multi-hot-encoding LSTM text classifier with the categories as follows: toxic, severe toxic, obscene, threat, insult and identity hate. 
 
-`Full code` [here](Text/TrainingModel.ipynb)
+Full code [here](Text/TrainingModel.ipynb)
 
 First of all the text becomes "cleaned". It is performed by the clean method which removes every stopword, ip adress, non alphabetic symbol, etc, so that only "important" word gets through and to remove unnecesary noise in the network.
 
@@ -86,16 +86,21 @@ model.compile('adam', loss='binary_crossentropy')
 
 Dataset is made entirely by random google images that serve the purpose of the labels. Actually the model is so flexible that the same repository can be used to any binary classification, not only the one it is currently being used for
 
-## Using
+## `Using`
 
-### Requirements
+### `Requirements`
 - Tensorflow
 - Numpy
 - OpenCV
 - NLTK
 - Matplotlib
 
+### `Instructions`
 
 1. Clone the repo and download the necessary databases as indicated in the sections above
 2. Open the TrainingModel.ipynb of the one you wish to test and run all cells, it should create the model.h5 file
 3. In the repo root folder should be the Hermes.py with two functions: predict_text and predict_images. Follow the instructions in there and you should be good to go
+
+## `Thank you notes`
+
+This project is based on the one made by [@iamhosseindhv](https://github.com/iamhosseindhv) on LSTM text classification. He is the main inspiration behind the text classification and the image classification is simply the image side of the same focus.  
