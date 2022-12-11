@@ -112,4 +112,4 @@ Here we can see how the loss and accuracy behaved on the course of 20 training e
 
 ## `Thank you notes`
 
-This project is based on the one made by [@iamhosseindhv](https://github.com/iamhosseindhv) on LSTM text classification. He is the main inspiration behind the text classification and the image classification is simply the image side of the same focus.
+This project is based on the one made by [@iamhosseindhv](https://github.com/iamhosseindhv) on LSTM text classification. He is the main inspiration behind the text classification, and the image classification is simply the image counter part of the same focus.
