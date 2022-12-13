@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/main.css') }}">
+</head>
+<body>
+    <h1>Profanity Detection</h1>
+
+    <table>
+        <tr>
+            <th>Content</th>
+            <th>Cat1</th>
+            <th>Cat2</th>
+            <th>Cat3</th>
+            <th>Cat4</th>
+            <th>Cat5</th>
+            <th>Cat6</th>
+        </tr>
+
+        {% for task in tasks %}
+            <tr>
+                <td>{{ task.content }}</td>
+                <td>{{ task.toxic }}</td>
+                <td>{{ task.severe_toxic }}</td>
+                <td>{{ task.obscene }}</td>
+                <td>{{ task.threat }}</td>
+                <td>{{ task.insult }}</td>
+                <td>{{ task.identity_hate }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+
+    <form action="/" method="POST">
+        <input type="text" name="content" id="content">
+        <input type="submit" value="Clasify">
+    </form>
+
+</body>
+</html>

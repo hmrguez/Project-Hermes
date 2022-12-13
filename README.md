@@ -53,10 +53,10 @@ Given a sataset of around 160k written Wikipedia forum comments the networks beh
 
 Here we can see how the loss and accuracy behaved on the course of 2 training epochs, both on training and validation data
 
-<img src="text_acc.png"></img>
-<img src="text_loss.png"></img>
+<img src="Boilerplate\text_acc.png"></img>
+<img src="Boilerplate\text_loss.png"></img>
 
-Full dataset can be found [here](https://www.kaggle.com/c/8076/download/train.csv.zip). Once downloaded in order to test it it must be placed within the Text/Raw Dataset folder or changed int the code.
+Full dataset can be found [here](https://www.kaggle.com/c/8076/download/train.csv.zip). Once downloaded in order to test it it must be placed within the Text/Raw Dataset folder or changed in the code.
 
 The testing script can be located [here](Text\TestingModel.ipynb)
 
@@ -93,8 +93,8 @@ Dataset is made entirely by random google images that serve the purpose of the l
 
 Here we can see how the loss and accuracy behaved on the course of 20 training epochs, both on training and validation data
 
-<img src="image_acc.png"></img>
-<img src="image_loss.png"></img>
+<img src="Boilerplate\image_acc.png"></img>
+<img src="Boilerplate\image_loss.png"></img>
 
 ## `Using`
 

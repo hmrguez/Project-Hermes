@@ -1,22 +1,22 @@
 import json
 import cv2
 import tensorflow, numpy as np
-import Text.Cleaning
+from Cleaning import clean
 
 # Loads the models
-text_model = tensorflow.keras.models.load_model('Text\profanity_model.h5')
-image_model = tensorflow.keras.models.load_model('Image\sfw_nswf_identifier.h5')
+text_model = tensorflow.keras.models.load_model('.\.\Text\profanity_model.h5')
+image_model = tensorflow.keras.models.load_model('.\.\Image\sfw_nswf_identifier.h5')
 
 
 # Loads the tokenizer
-with open('Text/tokenizer.json') as f:
+with open('././Text/tokenizer.json') as f:
     data = json.load(f)
     tokenizer = tensorflow.keras.preprocessing.text.tokenizer_from_json(data)
 
 def predict_text(comment) -> dict:
 
     # Cleans the comment for stopwords, removing symbols, etc
-    comment = Text.Cleaning.clean(comment)
+    comment = clean(comment)
 
     # Turns it into a vector with 1 element
     comment = np.expand_dims(comment,0)
@@ -46,5 +46,5 @@ def predict_image(image_path):
     result = image_model.predict(image)[0]
     return result
 
-
-print(predict_image('Image/data/sfw/focused_250842800-stock-photo-happy-young-professional-asian.jpg'))
+# st = predict_text('My mom great')['toxic']
+# print(st)
