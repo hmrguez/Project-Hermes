@@ -6,58 +6,101 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="../static/css/main.css">
     <link rel="stylesheet" href="{{ url_for('static',filename='css/main.css') }}">
 </head>
 
 <body>
-    <h1>Hermes</h1>
 
-    {% if query != None%}
+    <div class="grid">
+        <h1 class="header">Project - Hermes</h1>
 
-        <img src="{{ query.path }}" alt=" No path ">
+        <div class="imagePanel">
+            <img class="photo" src="../../Image/data/sfw/2-angkor-wat-getty.jpg" alt="" width="400" height="400">
+            <!-- <img src="{{ query.path }}" alt=" No path "> -->
+            <h3>
+                {% if query != None %}
 
-        {% if query.prediction > 0.5 %}
+                    {% if query.prediction > 0.5 %}
+                        Appropriate
+                    {% endif%}
+                    {% if query.prediction <= 0.5 %}
+                        Unappropriate
+                    {% endif %}
+                {% endif%}
+            </h3>
+        </div>
 
-            <h3>Appropiate</h3>
+        <div class="textPanel">
+            <p class="comment">
+                {% if text_query != None %}
+                {{ text_query.content }}
+                {% endif %}
+            </p>
 
-        {% endif %}
-
-        {% if query.prediction <= 0.5 %} 
-
-            <h3>Unappropiate</h3>
-
-        {% endif %}
-
-    {% endif%}
-
-
-
+            <div class="category">
+                <div class="Number">
+                    {% if text_query != None %}
+                    {{ text_query.toxic }}
+                    {% endif %}
+                </div>
+                <p class="Tag">Toxic</p>
+            </div>
+            <div class="category">
+                <div class="Number">
+                    {% if text_query != None %}
+                    {{ text_query.severe_toxic }}
+                    {% endif %}
+                </div>
+                <p class="Tag">Severe Toxic</p>
+            </div>
+            <div class="category">
+                <div class="Number">
+                    {% if text_query != None %}
+                    {{ text_query.obscene }}
+                    {% endif %}
+                </div>
+                <p class="Tag">Obscene</p>
+            </div>
+            <div class="category">
+                <div class="Number">
+                    {% if text_query != None %}
+                    {{ text_query.threat }}
+                    {% endif %}
+                </div>
+                <p class="Tag">Threat</p>
+            </div>
+            <div class="category">
+                <div class="Number">
+                    {% if text_query != None %}
+                    {{ text_query.insult }}
+                    {% endif %}
+                </div>
+                <p class="Tag">Insult</p>
+            </div>
+            <div class="category">
+                <div class="Number">
+                    {% if text_query != None %}
+                    {{ text_query.identity_hate }}
+                    {% endif %}
+                </div>
+                <p class="Tag">Identity Hate</p>
+            </div>
+        </div>
 
         <form class="formHeader" action="/" method="POST">
-            <div class="Text">
-                <input class="textForm" type="text" name="content" id="content">
-                <input class="textForm" type="submit" value="Clasify">
-            </div>
             
+            <div class="Text">
+                <input class="textForm" type="text" name="image_path" id="image_path">
+                <input class="textForm-btn" type="submit" value="Clasify Image">
+            </div>
+    
             <div class="Image">
-                <input class="textForm" type="text" name="image_path" id="image">
-                <input class="textForm" type="submit" value="submit">
+                <input class="textForm" type="text" name="content" id="image">
+                <input class="textForm-btn" type="submit" value="Clasify Text">
             </div>
         </form>
-
-    {% if text_query != None and text_query != undefined%}
-    
-        <div class="categoryContainer">
-            <div class="category">{{ text_query.content }}</div>
-            <div class="category">{{ text_query.toxic }}</div>
-            <div class="category">{{ text_query.severe_toxic }}</div>
-            <div class="category">{{ text_query.obscene }}</div>
-            <div class="category">{{ text_query.threat }}</div>
-            <div class="category">{{ text_query.insult }}</div>
-            <div class="category">{{ text_query.identity_hate }}</div>
-        </div>
-        
-    {% endif %}
+    </div>
 </body>
 
 </html>
