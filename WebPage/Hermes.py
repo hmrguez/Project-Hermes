@@ -27,6 +27,9 @@ def predict_text(comment) -> dict:
 
     # Predicts the batch and takes the first element which is the comment
     result = text_model.predict(token)[0]
+    
+    result = list(map(lambda x: f"{x:.5f}",result))
+
 
     # Returns a dictionary with each category and prediction
     result_dict = {'toxic': result[0], 'severe_toxic': result[1], 'obscene': result[2], 'threat': result[3], 'insult': result[4], 'identity_hate': result[5]}

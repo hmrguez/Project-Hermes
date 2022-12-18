@@ -2,3 +2,40 @@ body{
     margin: 0;
     font-family: sans-serif;
 }
+
+h1{
+    text-align: center;
+}
+
+.formHeader{
+    display: flex;
+    justify-content: center;
+}
+
+.textForm{
+    margin: 10px;
+}
+
+.Text{
+    background-color: aquamarine;
+    margin-left: 1px;
+    margin-right: 100px;
+}
+
+.Image{
+    background-color: darkorange;
+}
+
+.category{
+    border-radius: 10%;
+    background-color: greenyellow;
+    margin-right: 500px;
+    margin-left: 40px;
+    margin-top: 5px;
+}
+.categoryContainer{
+    display: flex;
+    right: 1000em;
+    flex-direction: column;
+
+}

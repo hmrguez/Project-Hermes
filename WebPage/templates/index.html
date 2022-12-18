@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,37 +8,56 @@
     <title>Document</title>
     <link rel="stylesheet" href="{{ url_for('static',filename='css/main.css') }}">
 </head>
+
 <body>
-    <h1>Profanity Detection</h1>
+    <h1>Hermes</h1>
 
-    <table>
-        <tr>
-            <th>Content</th>
-            <th>Cat1</th>
-            <th>Cat2</th>
-            <th>Cat3</th>
-            <th>Cat4</th>
-            <th>Cat5</th>
-            <th>Cat6</th>
-        </tr>
+    {% if query != None%}
 
-        {% for task in tasks %}
-            <tr>
-                <td>{{ task.content }}</td>
-                <td>{{ task.toxic }}</td>
-                <td>{{ task.severe_toxic }}</td>
-                <td>{{ task.obscene }}</td>
-                <td>{{ task.threat }}</td>
-                <td>{{ task.insult }}</td>
-                <td>{{ task.identity_hate }}</td>
-            </tr>
-        {% endfor %}
-    </table>
+        <img src="{{ query.path }}" alt=" No path ">
 
-    <form action="/" method="POST">
-        <input type="text" name="content" id="content">
-        <input type="submit" value="Clasify">
-    </form>
+        {% if query.prediction > 0.5 %}
 
+            <h3>Appropiate</h3>
+
+        {% endif %}
+
+        {% if query.prediction <= 0.5 %} 
+
+            <h3>Unappropiate</h3>
+
+        {% endif %}
+
+    {% endif%}
+
+
+
+
+        <form class="formHeader" action="/" method="POST">
+            <div class="Text">
+                <input class="textForm" type="text" name="content" id="content">
+                <input class="textForm" type="submit" value="Clasify">
+            </div>
+            
+            <div class="Image">
+                <input class="textForm" type="text" name="image_path" id="image">
+                <input class="textForm" type="submit" value="submit">
+            </div>
+        </form>
+
+    {% if text_query != None and text_query != undefined%}
+    
+        <div class="categoryContainer">
+            <div class="category">{{ text_query.content }}</div>
+            <div class="category">{{ text_query.toxic }}</div>
+            <div class="category">{{ text_query.severe_toxic }}</div>
+            <div class="category">{{ text_query.obscene }}</div>
+            <div class="category">{{ text_query.threat }}</div>
+            <div class="category">{{ text_query.insult }}</div>
+            <div class="category">{{ text_query.identity_hate }}</div>
+        </div>
+        
+    {% endif %}
 </body>
+
 </html>
